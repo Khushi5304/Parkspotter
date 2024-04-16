@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkSpotter - Payment Confirmation</title>
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        h2 {
+            margin-top: 0;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        .alert {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        header {
+    background-color:rgb(52, 53, 53) ;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px; /* Add margin to separate buttons from the right side */
+}
+
+/* Style for all buttons */
+.header-button {
+    padding: 10px 20px;
+    margin-left: 10px; /* Add margin between buttons */
+    background-color: transparent; /* Set initial background color to transparent */
+    color: #fff;
+    border: 2px solid transparent; /* Add initial transparent border */
+    border-radius: 10px; /* Initial border radius */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+.header-button:hover {
+    background-color: #101f2d; /* Change background color on hover */
+    border-color: #fff; /* Change border color on hover */
+    color: #0056b3; /* Change text color on hover */
+    border-radius: 20px; /* Adjust border radius on hover */
+    transform: translateY(-2px); /* Add a slight upward lift */
+}
+    </style>
+</head>
+<body>
+    <!-- Header buttons -->
+    <header>
+    <div class="header-buttons" id="navbar">
+        <a href="index.html" class="header-button">Home</a> 
+        <a href="profile.html" class="header-button">User Profile</a>
+        <a href="login.html" class="header-button">Login</a>
+        <a href="map.html" class="header-button">View map</a>
+        <a href="contactus.html" class="header-button">Contact Us</a>
+        <a href="about.html" class="header-button">About Us</a>
+    </div>
+  </header>
+
+    <!-- Payment confirmation message -->
+    <div class="container">
+        <h2>Payment Confirmation</h2>
+        <p>Your payment was successful!</p>
+        <div class="alert">
+            <span>&#10003;</span> Thank you for your payment.
+        </div>
+    </div>
+</body>
+</html>

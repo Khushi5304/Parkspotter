@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkSpotter - Book Now</title>
+    <link rel="stylesheet" href="#">
+    <style>
+        /* Add your styles here */
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.pricing-description {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-option {
+    margin-bottom: 20px;
+}
+
+.note {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Gradient background for pricing description container */
+
+
+/* Add a hover effect for pricing options */
+.pricing-option:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+}
+/* Pricing options styling */
+.pricing-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.option {
+    flex-basis: 30%;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.option h3 {
+    margin-top: 0;
+}
+
+.option p {
+    margin-bottom: 10px;
+}
+
+.option button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Book Your Parking Slot Now!</h1>
+            <p>Secure your parking spot with ParkSpotter and enjoy a hassle-free experience.</p>
+        </div>
+    </header>
+    
+    
+
+    <section class="booking-form-section">
+        <div class="container">
+            <h2>Book Your Parking Slot</h2>
+            <form action="confirm_booking.html" method="post">
+                <label for="parkingType">Select Parking Type:</label>
+                <select id="parkingType" name="parkingType" required>
+                    <option value="hourly">Hourly Parking</option>
+                    <option value="daily">Daily Parking</option>
+                    <option value="monthly">Monthly Parking</option>
+                </select>
+
+                <label for="duration">Select Duration:</label>
+                <input type="number" id="duration" name="duration" min="1" placeholder="Enter duration in hours/days/months" required>
+
+                <label for="vehicleType">Vehicle Type:</label>
+                <select  id="vehicleType" name="vehicleType"  required>
+                    
+                    <option value="car">Car</option>
+                    <option value="Bike">Bike</option>
+                </select>
+
+
+
+
+
+                <label for="vehicleNumber">Vehicle Number:</label>
+                <input type="text" id="vehicleNumber" name="vehicleNumber" placeholder="Enter your vehicle number" required>
+
+                <button type="submit" class="booking-button">Book Now</button>
+            </form>
+
+            <!-- Inside the commented-out section (pricing-description) -->
+<div class="options">
+    <div class="option car" id="hourlyOption">
+        <h3>Hourly Parking for Cars</h3>
+        <p>Perfect for short stays and quick errands. Pay only for the hours you need to park.</p>
+        <p>Starting at $Z per hour</p>
+        
+        
+        <!-- ... (existing content for hourly pricing) -->
+    </div>
+    <div class="option car" id="dailyOption">
+        <h3>Daily Parking for Cars</h3>
+        <p>Ideal for a full day of parking needs. Secure your parking spot for the entire day.</p>
+        <p>Starting at $X per day</p>
+        
+        
+        <!-- ... (existing content for daily pricing) -->
+    </div>
+    <div class="option car" id="monthlyOption">
+        <h3>Monthly Parking for Cars</h3>
+        <p>Best value for regular parkers. Enjoy unlimited access to your parking spot for the entire month.</p>
+        <p>Starting at $Y per month</p>
+        <!-- ... (existing content for monthly pricing) -->
+    </div>
+    <div class="option bike" id="hourlyOptionBike">
+        <h3>hourly Parking for Bikes</h3>
+        <p>Flexible option for short stays and quick bike stops. Pay only for the hours you need to park your bike.</p>
+        <p>Starting at $C per hour</p>
+
+        
+        <!-- ... (existing content for hourly pricing for bikes) -->
+    </div>
+    <div class="option bike" id="dailyOptionBike">
+        <h3>Daily Parking for Bikes</h3>
+        <p>Convenient for a full day of biking adventures. Secure your bike parking spot for the entire day.</p>
+        <p>Starting at $A per day</p>
+        
+        
+        <!-- ... (existing content for daily pricing for bikes) -->
+    </div>
+    <div class="option bike" id="monthlyOptionBike">
+        <h3>Monthly Parking for Bikes</h3>
+        <p>Best value for regular bikers. Enjoy unlimited access to your bike parking spot for the entire month.</p>
+        <p>Starting at $B per month</p>
+        <!-- ... (existing content for monthly pricing for bikes) -->
+    </div>
+    <p class="note">*Prices may vary based on location and demand.</p>
+</div>
+
+
+        </div>
+    </section>
+
+    
+    <!-- Other sections and content -->
+
+    <script src="script.js"></script>
+    <script>
+        // Alert message for successful booking
+        var bookingForm = document.querySelector('.booking-form-section form');
+        bookingForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            alert('Your booking has been confirmed!'); // Show alert message
+            window.location.href = 'payment.html'; // Redirect to payment page
+        });
+        
+    // JavaScript to show/hide descriptions
+    const hourlyOption = document.getElementById('hourlyOption');
+    const dailyOption = document.getElementById('dailyOption');
+    const monthlyOption = document.getElementById('monthlyOption');
+
+    hourlyOption.addEventListener('mouseenter', () => {
+        hourlyOption.classList.add('active');
+        dailyOption.classList.remove('active');
+        monthlyOption.classList.remove('active');
+    });
+
+    dailyOption.addEventListener('mouseenter', () => {
+        hourlyOption.classList.remove('active');
+        dailyOption.classList.add('active');
+        monthlyOption.classList.remove('active');
+    });
+
+    monthlyOption.addEventListener('mouseenter', () => {
+        hourlyOption.classList.remove('active');
+        dailyOption.classList.remove('active');
+        monthlyOption.classList.add('active');
+    });
+
+   
+
+const hourlyOptionBike = document.getElementById('hourlyOptionBike');
+const dailyOptionBike = document.getElementById('dailyOptionBike');
+const monthlyOptionBike = document.getElementById('monthlyOptionBike');
+
+const vehicleTypeSelect = document.getElementById('vehicleType');
+
+// Function to toggle visibility based on vehicle type
+function toggleVisibility(isCar) {
+    const displayStyle = isCar ? 'block' : 'none';
+
+    hourlyOption.style.display = displayStyle;
+    dailyOption.style.display = displayStyle;
+    monthlyOption.style.display = displayStyle;
+
+    hourlyOptionBike.style.display = isCar ? 'none' : 'block';
+    dailyOptionBike.style.display = isCar ? 'none' : 'block';
+    monthlyOptionBike.style.display = isCar ? 'none' : 'block';
+}
+
+// Event listener for vehicle type change
+vehicleTypeSelect.addEventListener('change', function () {
+    const selectedVehicleType = this.value.toLowerCase();
+    const isCar = selectedVehicleType === 'car';
+    toggleVisibility(isCar);
+});
+
+// Initial toggle based on the default selected value
+toggleVisibility(vehicleTypeSelect.value.toLowerCase() === 'car');
+
+
+
+
+
+</script>
+        
+    
+</body>
+</html>

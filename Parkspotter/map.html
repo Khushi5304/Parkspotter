@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkSpotter - Map</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <div class="header-buttons" id="navbar">
+            <a href="index.html" class="header-button">Home</a>
+            <a href="profile.html" class="header-button">User Profile</a>
+            <a href="login.html" class="header-button">Login</a>
+            <a href="map.html" class="header-button">View map</a>
+            <a href="contactus.html" class="header-button">Contact Us</a>
+            <a href="about.html" class="header-button">About Us</a>
+        
+        </div>
+        <div class="logomain">
+            <div class="logo">
+                <img src="photos/logo.png" alt="ParkSpotter Logo" class="img">
+            </div>
+            <div class="description">
+                <h1>Explore Available Parking Spots</h1>
+                <!-- Search bar code from search-bar-result.html goes here -->
+                <form id="searchForm">
+                    <input type="text" id="locationInput" placeholder="Enter your location">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Map container -->
+    <div id="map" style="height: 400px;"></div>
+
+    <script>
+        // Initialize and display the map
+        function initMap() {
+            // Specify the coordinates for the initial center of the map
+            var initialCenter = { lat: 40.7128, lng: -74.0060 }; // Example: New York City coordinates
+
+            // Create a new map object centered at the specified coordinates
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: initialCenter,
+                zoom: 12 // Adjust the zoom level as needed
+            });
+
+            // Optional: Add a marker at the initial center location
+            var marker = new google.maps.Marker({
+                position: initialCenter,
+                map: map,
+                title: 'Initial Location'
+            });
+
+            // Simulate checking for available parking spots using an external service
+            function checkParkingSpotAvailability(location, callback) {
+                // Make an HTTP request to the external service (replace this with your actual API endpoint)
+                var request = new XMLHttpRequest();
+                var url = 'https://example.com/api/parking-spots?location=' + encodeURIComponent(location);
+
+                request.open('GET', url, true);
+
+                request.onload = function() {
+                    if (request.status >= 200 && request.status < 400) {
+                        // Parse the response JSON
+                        var data = JSON.parse(request.responseText);
+                        // Check if parking spots are available based on the response data (example logic)
+                        var parkingSpotsAvailable = data && data.available_spots && data.available_spots > 0;
+                        // Invoke the callback with the result
+                        callback(parkingSpotsAvailable);
+                    } else {
+                        // Handle error response
+                        console.error('Failed to retrieve parking spot availability');
+                        callback(false); // Assume no parking spots available in case of error
+                    }
+                };
+
+                request.onerror = function() {
+                    // Handle connection error
+                    console.error('Connection error');
+                    callback(false); // Assume no parking spots available in case of error
+                };
+
+                request.send();
+            }
+
+            // Handle form submission
+            document.getElementById('searchForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Get the location input by the user
+                var location = document.getElementById('locationInput').value;
+
+                // Check parking spot availability for the searched location
+                checkParkingSpotAvailability(location, function(parkingSpotsAvailable) {
+                    if (parkingSpotsAvailable) {
+                        // If parking spots are available, open the search results page
+                        window.location.href = "search-results.html?location=" + location;
+                    } else {
+                        // If no parking spots are available, display an alert
+                        alert("No parking spots available near the searched location.");
+                    }
+                });
+            });
+        }
+    </script>
+    
+    <!-- Load the Google Maps JavaScript API with your API key and initialize the map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>

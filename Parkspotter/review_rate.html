@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate and Review</title>
+    <link rel="stylesheet" href="#">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #navbar {
+    background: linear-gradient(to bottom, #101f2d, #3e73a4, #8ba9c5);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004080;
+}
+.header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px; /* Add margin to separate buttons from the right side */
+}
+
+/* Style for all buttons */
+.header-button {
+    padding: 10px 20px;
+    margin-left: 10px; /* Add margin between buttons */
+    background-color: transparent; /* Set initial background color to transparent */
+    color: #fff;
+    border: 2px solid transparent; /* Add initial transparent border */
+    border-radius: 10px; /* Initial border radius */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+.header-button:hover {
+    background-color: #101f2d; /* Change background color on hover */
+    border-color: #fff; /* Change border color on hover */
+    color: #0056b3; /* Change text color on hover */
+    border-radius: 20px; /* Adjust border radius on hover */
+    transform: translateY(-2px); /* Add a slight upward lift */
+}
+ 
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 0;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .submit-review-section h2{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #msg{
+            color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            font-size: large;
+            font-weight:bolder;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-buttons" id="navbar">
+        <a href="index.html" class="header-button">Home</a> 
+        <a href="profile.html" class="header-button">User Profile</a>
+        <a href="login.html" class="header-button">Login</a>
+        <a href="map.html" class="header-button">View map</a>
+        <a href="contactus.html" class="header-button">Contact Us</a>
+        <a href="about.html" class="header-button">About Us</a>
+    
+    </div>
+
+    <header>
+        <h1>ParkSpotter - Rate and Review</h1>
+    </header>
+
+    <section class="submit-review-section">
+        <h2>Leave a Review</h2>
+        <!-- <form id="reviewForm" action="https://formspree.io/f/myyrwwyp" method="post"> -->
+        <form id="reviewForm" action="/submit-review" method="post">
+            <input type="hidden" id="id" name="id" value="1">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating">
+                
+                <option value="1">★</option>
+                <option value="2">★★</option>
+                <option value="3">★★★</option>
+                <option value="4">★★★★</option>
+                <option value="5">★★★★★</option>
+            </select>
+
+            <label for="review">Review:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+
+            
+        </form>
+
+        <!-- <script>
+        // function Redirect() {
+        //     window.location.assign("https://formspree.io/f/myyrwwyp");
+        //      }
+
+        fetch("https://formspree.io/f/myyrwwyp")           //api for the get request
+    .then(response => response.json())
+    .then(data => console.log(data));
+        </script> -->
+        <script>
+            function validateForm() {
+                var review = document.getElementById('review').value;
+                if (review.trim() === '') {
+                    alert('Review cannot be empty');
+                    return false;
+                }
+                return true;
+            }
+        </script>
+</body>
+</html>

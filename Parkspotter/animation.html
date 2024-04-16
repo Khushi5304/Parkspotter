@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Animation</title>
+    <style>
+       body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #101f2d, #3e73a4, #8ba9c5);
+           /* background-image: url(photos/spotitem2.jpg);  Add your background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+        }
+
+        .name {
+            font-family: 'Roboto', sans-serif;
+            font-size: 36px;
+            color: #fafafa;
+            opacity: 0;
+            animation: fadeIn 4s ease-out forwards, slideDown 4s ease-out forwards;
+            position: relative;
+            z-index: 1;
+            transform: translateY(-100%); /* Start off-screen */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            0% {
+                transform: translateY(-100%); /* Start off-screen */
+            }
+            25% {
+                transform: translateY(-80%); /* Start off-screen */
+            }
+            
+            50% {
+                transform: translateY(-60%); /* Start off-screen */
+            }
+            75%{
+                transform: translateY(-40%);
+            }
+            100% {
+                transform: translateY(0%); /* Reach the top */
+            }
+        }
+
+        /* Add additional styles for SVG graphics or other decorative elements */
+        .decorative-svg {
+            position: absolute;
+            bottom: 0; /* Position the SVG at the bottom */
+            left: 0;
+            width: 100%;
+            height: auto; /* Adjust height as needed */
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="name">NAVIGATE, RESERVE AND RELAX</div>
+
+    <div class="decorative-svg">
+        <!-- Add your SVG graphics or decorative elements here -->
+        <!-- Example: -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <!-- Define the linear gradient -->
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:rgb(114, 142, 165);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgb(235, 240, 240);stop-opacity:1" />
+            </linearGradient>
+            <!-- Apply the linear gradient to the path -->
+            <path fill="url(#grad1)" fill-opacity="1" d="M0,192L60,208C120,224,240,256,360,245.3C480,235,600,181,720,144C840,107,960,85,1080,85.3C1200,85,1320,107,1380,117.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        </svg>
+    </div>
+
+    <script>
+        // After 7 seconds, redirect to the main homepage (main.html)
+        setTimeout(function () {
+            window.location.href = 'index.html';
+        }, 3000);
+    </script>
+</body>
+</html>

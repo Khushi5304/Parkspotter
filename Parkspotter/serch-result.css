@@ -1,0 +1,92 @@
+/* search-result.css */
+
+/* Header Styles */
+header {
+    background: linear-gradient(to bottom, #101f2d, #3e73a4, #8ba9c5); /* Background color for the header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-top: 0; /* Remove margin from the top of the h1 element */
+}
+
+header p {
+    margin-top: 5px;
+}
+
+/* Navigation Button Styles */
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none; /* Add margin to the bottom of the navigation */
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #38a4c5;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px; /* Adjusted border radius */
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+.nav-button:hover {
+    background-color: #f6f4f4; /* Changed hover background color */
+}
+
+/* Main Content Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Search Results Styles */
+.search-results {
+    margin-bottom: 20px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* .result-item {
+    /* Additional styles for individual result items can be added here */
+
+
+.item-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgb(103, 102, 102);
+    text-align: center;
+}
+
+.item-container img {
+    max-width: 90%;
+    height: 400px;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #999797;
+}
+
+footer p {
+    margin: 0;
+    color: #222020;
+    font-size: 14px;
+}

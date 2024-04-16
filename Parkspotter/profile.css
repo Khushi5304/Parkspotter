@@ -1,0 +1,172 @@
+/* profile.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: linear-gradient(to bottom, #101f2d, #3e73a4, #8ba9c5);
+    color: #fff;
+    padding: 20px;
+}
+#navbar {
+    /* background: linear-gradient(to bottom, #101f2d, #3e73a4, #8ba9c5); */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004080;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px; /* Add margin to separate buttons from the right side */
+}
+
+/* Style for all buttons */
+.header-button {
+    padding: 10px 20px;
+    margin-left: 10px; /* Add margin between buttons */
+    background-color: transparent; /* Set initial background color to transparent */
+    color: #fff;
+    border: 2px solid transparent; /* Add initial transparent border */
+    border-radius: 10px; /* Initial border radius */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+.header-button:hover {
+    background-color: #101f2d; /* Change background color on hover */
+    border-color: #fff; /* Change border color on hover */
+    color: #0056b3; /* Change text color on hover */
+    border-radius: 20px; /* Adjust border radius on hover */
+    transform: translateY(-2px); /* Add a slight upward lift */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user-details {
+    flex-grow: 1;
+}
+
+.user-details h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.user-details h2 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.user-details p {
+    margin: 5px 0;
+}
+
+.dashboard {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    height: 350px;
+}
+
+.dashboard h2 {
+    margin-top: 0;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.booking, .saved-locations, .account-settings {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.booking h3, .saved-locations h3, .account-settings h3 {
+    margin-top: 0;
+}
+
+.booking p, .saved-locations ul, .account-settings p {
+    margin: 5px 0;
+}
+
+.saved-locations ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #999797;
+}
+
+footer p {
+    margin: 0;
+    color: #222020;
+    font-size: 14px;
+}
+/* .btn{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+button{
+     width: 120px;
+     height:50px; 
+     background-color: #255b8e; 
+     border: #fff;
+}
+.content{
+    color: #d8dde2;
+    font-size: medium;
+    /* background-color: #3e73a4; */
+/* } */
+/* button a{
+    display: contents;
+    color: #fff;
+}  */

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkSpotter FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        .question {
+            font-weight: bold;
+            cursor: pointer;
+            color: #007bff;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .answer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(1)">
+                <strong>Question 1:</strong> What is ParkSpotter?
+            </div>
+            <div class="answer" id="answer1">
+                <p>ParkSpotter is a website for finding and reserving parking spots in various locations. It helps users save time and hassle by providing information about available parking spots and allowing them to book spots in advance.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(2)">
+                <strong>Question 2:</strong> How do I reserve a parking spot on ParkSpotter?
+            </div>
+            <div class="answer" id="answer2">
+                <p>To reserve a parking spot on ParkSpotter, simply search for your desired location and select an available spot from the list. Then, follow the prompts to complete the reservation process and make your payment.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(3)">
+                <strong>Question 3:</strong> Is there a fee for using ParkSpotter?
+            </div>
+            <div class="answer" id="answer3">
+                <p>ParkSpotter is free to use for searching and browsing available parking spots. However, there may be fees associated with reserving a parking spot, which will be displayed during the reservation process.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="question" onclick="toggleAnswer(4)">
+                <strong>Question 4:</strong> Can I cancel my parking reservation?
+            </div>
+            <div class="answer" id="answer4">
+                <p>Yes, you can cancel your parking reservation on ParkSpotter. Simply log in to your account, navigate to your reservations, and follow the prompts to cancel your reservation. Please note that cancellation policies may vary depending on the parking provider.</p>
+            </div>
+        </div>
+
+        <!-- Add more FAQ items as needed -->
+
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById('answer' + id);
+            answer.style.display = (answer.style.display == 'block') ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

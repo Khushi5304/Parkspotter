@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        
+        header {
+            background: linear-gradient(to bottom, #101f2d, #3e73a4, #8ba9c5);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1, h2, h3 {
+            margin: 0;
+        }
+        
+        p {
+            margin-top: 5px;
+        }
+        
+        form {
+            margin-top: 20px;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border: 1px solid #ccc;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1d2329;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #36414b;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        
+        .header-buttons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-right: 20px;
+        }
+        
+        .header-button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .header-button:hover {
+            background-color: #101f2d;
+            border-color: #fff;
+            color: #0056b3;
+            border-radius: 20px;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            /* position: fixed; */
+            bottom: 0;
+            width: 100%;
+        }
+        .container-changep{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-changep h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.price-input {
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+  
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome Admin</h1>
+        <div class="header-buttons">
+            <a href="index.html" class="header-button">Home</a>
+            <a href="Logoutpage.html" class="header-button">Logout</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2>User Details</h2>
+        <p>Below is a list of all registered users and their details. Click on "View Details" to see more information about each user.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                    <th>Delet</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td><a href="user-detail.html">View Details</a></td>
+                    <td><button onclick="deleteUser(this.parentElement.parentElement)">Delete</button></td>
+
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>jane.smith@example.com</td>
+                    <td><a href="user-detail.html">View Details</a></td>
+                    <td><button onclick="deleteUser(this.parentElement.parentElement)">Delete</button></td>
+
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Mihir Patel</td>
+                    <td>mm2345@example.com</td>
+                    <td><a href="user-detail.html">View Details</a></td>
+                    <td><button onclick="deleteUser(this.parentElement.parentElement)">Delete</button></td>
+
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Bansi Patel</td>
+                    <td>pb1200@example.com</td>
+                    <td><a href="user-detail.html">View Details</a></td>
+                    <td><button onclick="deleteUser(this.parentElement.parentElement)">Delete</button></td>
+
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Bansi Patel</td>
+                    <td>pb1200@example.com</td>
+                    <td><a href="user-detail.html">View Details</a></td>
+                    <td><button onclick="deleteUser(this.parentElement.parentElement)">Delete</button></td>
+
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Bansi Patel</td>
+                    <td>pb1200@example.com</td>
+                    <td><a href="user-detail.html">View Details</a></td>
+                    <td><button onclick="deleteUser(this.parentElement.parentElement)">Delete</button></td>
+
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Bansi Patel</td>
+                    <td>pb1200@example.com</td>
+                    <td><a href="user-detail.html">View Details</a></td>
+                    <td><button onclick="deleteUser(this.parentElement.parentElement)">Delete</button></td>
+
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Bansi Patel</td>
+                    <td>pb1200@example.com</td>
+                    <td><a href="user-detail.html">View Details</a></td>
+                    <td><button onclick="deleteUser(this.parentElement.parentElement)">Delete</button></td>
+
+                </tr>
+                <!-- Add more users as needed -->
+            </tbody>
+        </table>
+    </div>
+    <div class="container-changep">
+        <h2>Change Price</h2>
+        <form id="priceForm" class="price-form">
+            <div class="form-group">
+                <label for="bikeHourlyPrice">Bike Hourly Price:</label>
+                <input type="text" id="bikeHourlyPrice" name="bikeHourlyPrice" value="5" class="price-input">
+            </div>
+            <div class="form-group">
+                <label for="bikeDailyPrice">Bike Daily Price:</label>
+                <input type="text" id="bikeDailyPrice" name="bikeDailyPrice" value="20" class="price-input">
+            </div>
+            <div class="form-group">
+                <label for="bikeMonthlyPrice">Bike Monthly Price:</label>
+                <input type="text" id="bikeMonthlyPrice" name="bikeMonthlyPrice" value="100" class="price-input">
+            </div>
+            <div class="form-group">
+                <label for="carHourlyPrice">Car Hourly Price:</label>
+                <input type="text" id="carHourlyPrice" name="carHourlyPrice" value="10" class="price-input">
+            </div>
+            <div class="form-group">
+                <label for="carDailyPrice">Car Daily Price:</label>
+                <input type="text" id="carDailyPrice" name="carDailyPrice" value="50" class="price-input">
+            </div>
+            <div class="form-group">
+                <label for="carMonthlyPrice">Car Monthly Price:</label>
+                <input type="text" id="carMonthlyPrice" name="carMonthlyPrice" value="200" class="price-input">
+            </div>
+            <button type="submit" class="submit-button">Update Prices</button>
+        </form>
+    </div>
+    
+    
+    <footer>
+        <p>&copy; 2024 ParkSpotter. All rights reserved.</p>
+    </footer>
+    <script>
+    function deleteUser(row) {
+        // Remove the row from the table
+        row.remove();
+    }
+    
+        document.getElementById("priceForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            // Perform the update logic here (e.g., update prices in the database)
+            alert("Prices updated successfully!"); // Display alert
+        });
+    
+</script>
+    
+</body>
+</html>

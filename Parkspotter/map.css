@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#navbar {
+    /* margin-top: 30px; */
+    background: linear-gradient(to bottom, #101f2d, #3e73a4, #8ba9c5);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004080;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px; /* Add margin to separate buttons from the right side */
+}
+
+/* Style for all buttons */
+.header-button {
+    padding: 10px 20px;
+    margin-left: 10px; /* Add margin between buttons */
+    background-color: transparent; /* Set initial background color to transparent */
+    color: #fff;
+    border: 2px solid transparent; /* Add initial transparent border */
+    border-radius: 10px; /* Initial border radius */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+.header-button:hover {
+    background-color: #101f2d; /* Change background color on hover */
+    border-color: #fff; /* Change border color on hover */
+    color: #0056b3; /* Change text color on hover */
+    border-radius: 20px; /* Adjust border radius on hover */
+    transform: translateY(-2px); /* Add a slight upward lift */
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Team</title>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.member {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.member:hover {
+    transform: scale(1.05);
+}
+
+.member h2 {
+    margin-top: 0;
+}
+
+.member p {
+    margin-bottom: 10px;
+}
+
+/* Animation for member entry */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.member {
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+</style>
+<body>
+        <h1>Core Team</h1>
+        <div class="member" id="khushi">
+            <h2>ABC</h2>
+            <p>Role: Developer</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ex in urna varius ultrices.</p>
+        </div>
+        <div class="member" id="kesha">
+            <h2>CDE</h2>
+            <p>Role: Manager</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ex in urna varius ultrices.</p>
+        </div>
+        <div class="member" id="drashti">
+            <h2>EFG</h2>
+            <p>Role: Designer</p>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis ex in urna varius ultrices.</p>
+        </div>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="edit-profile.css">
+</head>
+<body>
+    <header>
+        <h1>Edit Profile</h1>
+    </header>
+
+    <main class="container">
+        <form id="editProfileForm" action="/edit-profile" method="POST">
+            <label for="newUsername">New Username:</label>
+            <input type="text" id="newUsername" name="newUsername" value=""><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value=""><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" value=""><br>
+            <input type="hidden" id="username" name="username" value="khushi">
+            <button type="submit">Save Changes</button>
+        </form>
+    </main>
+
+    <footer>
+        <p> 2024 ParkSpotter. All rights reserved.</p>
+    </footer>
+
+    <script src="edit-profile.js"></script>
+    <script>
+        // Get the username from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+
+        // Set the form action based on the username
+        const form = document.getElementById('editProfileForm');
+        form.action = `/edit-profile/${username}`;
+    </script>
+</body>
+</html>

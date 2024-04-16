@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkSpotter - Payment</title>
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar {
+            background: linear-gradient(to bottom, #101f2d, #3e73a4, #8ba9c5);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004080;
+        }
+
+        .header-buttons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-right: 20px; /* Add margin to separate buttons from the right side */
+        }
+
+        /* Style for all buttons */
+        .header-button {
+            padding: 10px 20px;
+            margin-left: 10px; /* Add margin between buttons */
+            background-color: transparent; /* Set initial background color to transparent */
+            color: #fff;
+            border: 2px solid transparent; /* Add initial transparent border */
+            border-radius: 10px; /* Initial border radius */
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Smooth transition for all properties */
+        }
+
+        .header-button:hover {
+            background-color: #101f2d; /* Change background color on hover */
+            border-color: #fff; /* Change border color on hover */
+            color: #0056b3; /* Change text color on hover */
+            border-radius: 20px; /* Adjust border radius on hover */
+            transform: translateY(-2px); /* Add a slight upward lift */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .payment-details {
+            display: none;
+        }
+
+        .payment-button {
+            display: block;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+        <div class="header-buttons" id="navbar">
+            <a href="index.html" class="header-button">Home</a> 
+            <a href="profile.html" class="header-button">User Profile</a>
+            <a href="login.html" class="header-button">Login</a>
+            <a href="map.html" class="header-button">View map</a>
+            <a href="contactus.html" class="header-button">Contact Us</a>
+            <a href="about.html" class="header-button">About Us</a>
+        
+        </div>
+
+        <div class="container">
+            <h2>Payment Details</h2>
+            <p>Please select your preferred payment method:</p>
+        
+            <form id="paymentForm" action="#" method="post" onsubmit="return validatePaymentMethod()">
+                <label for="paymentMethod">Select Payment Method:</label>
+                <select id="paymentMethod" name="paymentMethod" onchange="togglePaymentDetails()" required>
+                    <option value="card">&#xf09d; Credit/Debit Card</option>
+                    <option value="internetBanking">&#xf1c6; Internet Banking</option>
+                    <option value="bhim">&#xf282; BHIM UPI</option>
+                    <option value="paytm">&#xf3c5; Paytm</option>
+                </select> 
+        
+                <div id="cardDetails" class="payment-details" style="display:none;">
+                    <label for="cardNumber">Card Number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required>
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+        
+                <div id="internetBankingDetails" class="payment-details" style="display:none;">
+                    <label for="bankName">Select Bank:</label>
+                    <select id="bankName" name="bankName" required>
+                        <option value="icici">ICICI Bank</option>
+                        <option value="hdfc">HDFC Bank</option>
+                        <option value="axis">Axis Bank</option>
+                        <option value="sbi">State Bank of India</option>
+                    </select>
+                    <label for="internetBankingID">Internet Banking ID:</label>
+                    <input type="text" id="internetBankingID" name="internetBankingID" required>
+                </div>
+        
+                <div id="bhimDetails" class="payment-details" style="display:none;">
+                    <label for="bhimID">BHIM UPI ID:</label>
+                    <input type="text" id="bhimID" name="bhimID" required>
+                </div>
+        
+                <div id="paytmDetails" class="payment-details" style="display:none;">
+                    <label for="paytmNumber">Paytm Number:</label>
+                    <input type="text" id="paytmNumber" name="paytmNumber" required>
+                </div>
+        
+                <button type="submit" class="payment-button"><a href="confirmpayment.html" style="text-decoration: none; color: inherit;">Proceed to Pay</a></button>
+
+            </form>
+        </div>
+    <section class="review-section">
+        <div class="container">
+            <h2>Enjoyed using ParkSpotter?</h2>
+            <p>Share your experience with us and help others discover great parking spots!</p>
+            <p>Whether it's a quick errand or a full-day adventure, ParkSpotter has you covered. Leave a review and let us know how we're doing!</p>
+            <a href="review_rate.html" class="review-button">Leave a Review</a>
+        </div>
+    </section>
+    <script>
+        function togglePaymentDetails() {
+            var paymentMethod = document.getElementById("paymentMethod").value;
+            var cardDetails = document.getElementById("cardDetails");
+            var internetBankingDetails = document.getElementById("internetBankingDetails");
+            var bhimDetails = document.getElementById("bhimDetails");
+            var paytmDetails = document.getElementById("paytmDetails");
+    
+            cardDetails.style.display = "none";
+            internetBankingDetails.style.display = "none";
+            bhimDetails.style.display = "none";
+            paytmDetails.style.display = "none";
+    
+            if (paymentMethod === "card") {
+                cardDetails.style.display = "block";
+            } else if (paymentMethod === "internetBanking") {
+                internetBankingDetails.style.display = "block";
+            } else if (paymentMethod === "bhim") {
+                bhimDetails.style.display = "block";
+            } else if (paymentMethod === "paytm") {
+                paytmDetails.style.display = "block";
+            }
+        }
+       
+    </script>
+    <script>
+        function validatePaymentMethod() {
+            var paymentMethod = document.getElementById("paymentMethod").value;
+            if (paymentMethod === "") {
+                alert("Please select a payment method.");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+
+    <!-- <div id="paymentConfirmation" class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Payment successful!</strong> Thank you for your payment.
+    </div> -->
+    
+</body>
+</html>

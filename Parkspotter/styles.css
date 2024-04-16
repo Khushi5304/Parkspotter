@@ -1,0 +1,594 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    background: linear-gradient(to bottom, #101f2d, #3e73a4, #8ba9c5);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+ 
+h1, h2, h3 {
+    margin: 0;
+}
+
+p {
+    margin-top: 5px;
+}
+p a{
+    display: contents;
+    color: #333;
+    font-weight: bold;
+}
+form {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1d2329;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #36414b;
+}
+
+.featured-areas {
+    max-width: 100%;
+    margin-top: 100px;
+    margin: 5px;
+    padding: 20px;
+    background-color: #fcfbfb;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    /* margin-top: 150px; */
+}
+
+.area {
+    width: 80%;
+    height: 80%;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.area img {
+    background: #8ba9c5;
+    max-width: 100%;
+    border-radius: 5px;
+    display: block;
+    transition: background 0.6s, transform 0.5s;
+    cursor: pointer;
+    
+}
+.grid-container .area:hover{
+    background: linear-gradient(to bottom, #101f2d, #3e73a4, #8ba9c5);
+    transform: translateY(-10px);
+    color: #fff;
+}
+
+.area h3 {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.area p {
+    color: #666;
+}
+/* styles.css */
+.map-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #1f1717;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 999; /* Ensure the button appears above other content */
+}
+
+.map-button:hover {
+    background-color: #0056b3;
+}
+
+.map-description {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #e2d8d8;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;   
+    /* Initially hide the description */
+   /* Ensure the description appears above other content */
+   z-index: 999; 
+}
+/* styles.css */
+
+.map-description.show {
+    display: block;
+}
+.logomain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+
+    width: 40%;
+    margin: 0;
+}
+.description{
+    width:70%;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+    /* border-radius: 100%; */
+    margin: 0;
+    width: 50%;
+
+}
+
+/* Add styles for header buttons */
+.header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px; /* Add margin to separate buttons from the right side */
+}
+
+/* Style for all buttons */
+.header-button {
+    padding: 10px 20px;
+    margin-left: 10px; /* Add margin between buttons */
+    background-color: transparent; /* Set initial background color to transparent */
+    color: #fff;
+    border: 2px solid transparent; /* Add initial transparent border */
+    border-radius: 10px; /* Initial border radius */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+/* Add styles for the review button and description */
+.reviews-section {
+    text-align: center;
+    margin-bottom: 50px;
+    background-image: linear-gradient(to bottom,  #bac0c8, #bac0c8);
+}
+
+
+
+.reviews-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+/* Hover effect */
+.header-button:hover {
+    background-color: #101f2d; /* Change background color on hover */
+    border-color: #fff; /* Change border color on hover */
+    color: #0056b3; /* Change text color on hover */
+    border-radius: 20px; /* Adjust border radius on hover */
+    transform: translateY(-2px); /* Add a slight upward lift */
+}
+.reviews-section {
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin: 50px;
+}
+
+.review {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.review h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.review p {
+    font-size: 16px;
+    color: #666;
+}
+
+.rating {
+    font-size: 24px;
+    color: gold;
+    margin-top: 5px;
+}
+
+/* Add your custom styles for the footer here */
+
+.pricing-booking-section {
+    /* background-color: #f9f9f9; */
+    padding: 50px 0;
+    margin: 50px;
+    background-image: linear-gradient(to bottom,  #bac0c8, #bac0c8);
+    position: relative;
+    overflow: hidden;
+
+}
+/* .pricing-booking-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Lighter color overlay */
+   /* opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: scale(0.9); /* Initial scale, slightly smaller */
+/* }  */
+
+.pricing-booking-section:hover::before {
+    opacity: 1;
+    transform: scale(1); /* Full scale on hover */
+}
+
+.option {
+    position: relative;
+    z-index: 1; /* Ensure the text is on top of the overlay */
+    transition: transform 0.3s;
+}
+
+.option:hover {
+    transform: scale(1.1);
+    background: #1d2329;
+    color: #91a2b4; /* Zoom in effect on hover */
+}
+
+.option:hover ~ .pricing-booking-section::before {
+    opacity: 1;
+    transform: scale(1); /* Full scale on hover */
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    
+}
+
+.pricing-booking-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.pricing-booking-section p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.pricing-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    gap: 50px;
+}
+
+.option {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+}
+
+.option h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.option p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.note {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.booking-button {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #1d2329;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.booking-button:hover {
+    background-color: #4a78a9;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+}
+
+.logo, .contact, .follow-us, .about-team {
+    text-align: center;
+    flex: 1; /* Allow all sections to take equal space */
+    margin: 15px; 
+    font-size: medium;
+    padding-bottom: 60px;
+   
+}
+
+
+.logo img {
+    height: 250px; /* Set the desired height for the logo */
+}
+
+
+.email, .media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.contact a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact a i {
+    padding: 10px;
+    margin-top: 0; /* Remove margin-top to align icons properly */
+}
+
+.media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.media a i {
+    padding: 10px;
+    margin-top: 0; /* Remove margin-top to align icons properly */
+}
+.media i:hover, .contact i:hover{
+    color: #4a78a9;
+}
+
+.about-team {
+    text-align: center;
+    /* font-size: small; */
+    white-space: nowrap; /* Prevent the content from wrapping */
+    overflow: hidden; /* Hide any overflow content */
+    text-overflow: ellipsis;
+}
+.about-team a{
+    
+    display: contents;
+    color: white;
+}
+.copyright {
+    margin-top: 15px; /* Add margin between content and copyright */
+}
+.namaste-section {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Style for the greeting */
+/* Style for the Namaste Duniya section */
+.namaste-section {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Style for the greeting */
+.greeting {
+    margin-bottom: 20px;
+}
+.greeting img {
+    width: 100px; /* Adjust the size of the image as needed */
+    height: auto;
+}
+
+/* Style for the welcome message */
+.welcome-message {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #1750a4; /* Coral color */
+}
+.welcome-message h3{
+    color:rgb(24, 120, 216);
+}
+
+/* Style for the website intro */
+.website-intro {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #1750a4; /* Teal color */
+}
+.greeting h3{
+    color: #2b414a;
+}
+
+.owl-carousel.owl-theme.carousel-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* Owl Carousel styles */
+
+/* Hide default Owl Carousel navigation */
+/* .owl-nav { */
+    /* display: none; */
+/* } */
+
+/* Container for the carousel */
+/* .carousel-container {
+    position: relative;
+} */
+
+/* Individual carousel items */
+.carousel-item {
+    position: relative;
+    overflow: hidden; /* Hide overflowing content */
+    border-radius: 0px; /* Rounded corners for the items */
+    box-shadow: 0 0 10px rgba(246, 244, 244, 0.3); /* Add a subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions for transform and box-shadow */
+}
+.carousel-item:hover {
+    transform: scale(1.05); /* Zoom in by 5% on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+}
+
+/* Image inside carousel item */
+.carousel-img {
+    width: 100%;
+    height: 230px;
+    margin: 40px;
+    /* margin-right: 40px; */
+    object-fit: cover;
+    transition: transform 0.3s;
+    
+}
+.carousel-item:hover .carousel-img {
+    transform: scale(1.1);
+}
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    /* border-radius: 3px; */
+}
+
+  /* Custom navigation for Owl Carousel   */
+ .owl-nav-custom {
+    position: absolute;
+     top: 50%; /* Vertically center the buttons  */
+         transform: translateY(-50%); 
+      z-index: 10;  
+}   
+
+  .owl-prev-custom,
+ .owl-next-custom {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin: 0 10px;
+    cursor: pointer;
+}  
+
+ .owl-prev-custom:hover,
+.owl-next-custom:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+} 
+
+/* Center the dots */
+.owl-dots {
+    text-align: center;
+    position: absolute;
+    bottom: 2px; /* Adjust the distance from the bottom as needed */
+    left: 0;
+    right: 0;
+    margin-top: 20px; /* Add some space between dots and items */
+}
+
+/* Style for individual dots */
+.owl-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 10px 5px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2); /* Set the color and opacity of the dots */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Active dot style */
+.owl-dot.active {
+    background-color: rgba(0, 0, 0, 0.5); /* Set the color of the active dot */
+}
+.carousel-item{
+    position: relative;
+}
+
