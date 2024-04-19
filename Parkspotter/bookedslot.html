@@ -48,6 +48,9 @@
             align-items: center;
             cursor: pointer;
         }
+        .card.clicked {
+            background-color: #ff0000; /* Red background color */
+        }
 
         .card:hover {
             transform: translateY(-5px);
@@ -71,6 +74,10 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        .card-container a {
+    text-decoration: none;
+}
+
     </style>
 </head>
 
@@ -79,68 +86,68 @@
         <h2>Bike Parking Slots</h2>
         <div class="card-container">
             <!-- Bicycle Parking Slots -->
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot1" onclick="changeColor('slot1')">
                 <div class="slot-number">Slot 1</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot2" onclick="changeColor('slot2')">
                 <div class="slot-number">Slot 2</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot3" onclick="changeColor('slot3')">
                 <div class="slot-number">Slot 3</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot4" onclick="changeColor('slot4')">
                 <div class="slot-number">Slot 4</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot5" onclick="changeColor('slot5')">
                 <div class="slot-number">Slot 5</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot6" onclick="changeColor('slot6')">
                 <div class="slot-number">Slot 6</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot7" onclick="changeColor('slot7')">
                 <div class="slot-number">Slot 7</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot8" onclick="changeColor('slot8')">
                 <div class="slot-number">Slot 8</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot9" onclick="changeColor('slot9')">
                 <div class="slot-number">Slot 9</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot10" onclick="changeColor('slot10')">
                 <div class="slot-number">Slot 10</div>
             </a>
         </div>
         <h2>Car Parking Slots</h2>
         <div class="card-container">
             <!-- Car Parking Slots -->
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot11" onclick="changeColor('slot11')">
                 <div class="slot-number">Slot 11</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot12" onclick="changeColor('slot12')">
                 <div class="slot-number">Slot 12</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot13" onclick="changeColor('slot13')">
                 <div class="slot-number">Slot 13</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot14" onclick="changeColor('slot14')">
                 <div class="slot-number">Slot 14</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot15" onclick="changeColor('slot15')">
                 <div class="slot-number">Slot 15</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot16" onclick="changeColor('slot16')">
                 <div class="slot-number">Slot 16</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot17" onclick="changeColor('slot17')">
                 <div class="slot-number">Slot 17</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot18" onclick="changeColor('slot18')">
                 <div class="slot-number">Slot 18</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot19" onclick="changeColor('slot19')">
                 <div class="slot-number">Slot 19</div>
             </a>
-            <a href="bookingpagee.html" class="card">
+            <a href="bookingpagee.html" class="card" id="slot20" onclick="changeColor('slot20')">
                 <div class="slot-number">Slot 20</div>
             </a>
         </div>
@@ -151,6 +158,96 @@
             <img src="image3.jpg" alt="Image 3">
         </div>
     </div>
+    <script>
+         function changeColor(cardId) {
+            let card = document.getElementById(cardId);
+            let isClicked = card.classList.toggle('clicked');
+            localStorage.setItem(cardId, isClicked ? 'clicked' : '');
+        }
+
+        // Check if the card was previously clicked and set the color accordingly
+        let slot1 = document.getElementById('slot1');
+        if (localStorage.getItem('slot1') === 'clicked') {
+            slot1.classList.add('clicked');
+        }
+        let slot2 = document.getElementById('slot2');
+        if (localStorage.getItem('slot2') === 'clicked') {
+            slot2.classList.add('clicked');
+        }
+        let slot3 = document.getElementById('slot3');
+        if (localStorage.getItem('slot3 ') === 'clicked') {
+            slot3.classList.add('clicked');
+        }
+        let slot4 = document.getElementById('slot4');
+        if (localStorage.getItem('slot4') === 'clicked') {
+            slot4.classList.add('clicked');
+        }
+        let slot5 = document.getElementById('slot5');
+        if (localStorage.getItem('slot5') === 'clicked') {
+            slot5.classList.add('clicked');
+        }
+        let slot6= document.getElementById('slot6');
+        if (localStorage.getItem('slot6') === 'clicked') {
+            slot6.classList.add('clicked');
+        }
+        let slot7 = document.getElementById('slot7');
+        if (localStorage.getItem('slot7') === 'clicked') {
+            slot7.classList.add('clicked');
+        }
+        let slot8 = document.getElementById('slot8');
+        if (localStorage.getItem('slot8') === 'clicked') {
+            slot8.classList.add('clicked');
+        }
+        let slot9 = document.getElementById('slot9');
+        if (localStorage.getItem('slot9') === 'clicked') {
+            slot9.classList.add('clicked');
+        }
+        let slot10 = document.getElementById('slot10');
+        if (localStorage.getItem('slot10') === 'clicked') {
+            slot10.classList.add('clicked');
+        }
+        let slot11= document.getElementById('slot11');
+        if (localStorage.getItem('slot11') === 'clicked') {
+            slot11.classList.add('clicked');
+        }
+        let slot12 = document.getElementById('slot12');
+        if (localStorage.getItem('slot12') === 'clicked') {
+            slot12.classList.add('clicked');
+        }
+        let slot13 = document.getElementById('slot13');
+        if (localStorage.getItem('slot13') === 'clicked') {
+            slot13.classList.add('clicked');
+        }
+        let slot14= document.getElementById('slot14');
+        if (localStorage.getItem('slot14') === 'clicked') {
+            slot14.classList.add('clicked');
+        }
+        let slot15 = document.getElementById('slot15');
+        if (localStorage.getItem('slot15') === 'clicked') {
+            slot15.classList.add('clicked');
+        }
+        let slot16 = document.getElementById('slot16');
+        if (localStorage.getItem('slot16') === 'clicked') {
+            slot16.classList.add('clicked');
+        }
+        let slot17 = document.getElementById('slot17');
+        if (localStorage.getItem('slot17') === 'clicked') {
+            slot17.classList.add('clicked');
+        }
+        let slot18 = document.getElementById('slot18');
+        if (localStorage.getItem('slot18') === 'clicked') {
+            slot18.classList.add('clicked');
+        }
+        let slot19 = document.getElementById('slot19');
+        if (localStorage.getItem('slot19') === 'clicked') {
+            slot19.classList.add('clicked');
+        }
+        let slot20 = document.getElementById('slot20');
+        if (localStorage.getItem('slot20') === 'clicked') {
+            slot20.classList.add('clicked');
+        }
+
+    </script>
 </body>
 
 </html>
