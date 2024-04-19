@@ -59,6 +59,7 @@ app.use('/coreTeam.html', express.static(path.join(__dirname, '..', 'coreTeam.ht
 app.use('/confirmpayment.html',express.static(path.join(__dirname, '..', 'confirmpayment.html')))
 app.use('/bookedslot.html', express.static(path.join(__dirname, '..', 'bookedslot.html')));
 app.use('/parkingarea.html', express.static(path.join(__dirname, '..', 'parkingarea.html')));
+app.use('/datavisualization.html', express.static(path.join(__dirname, '..', 'datavisualization.html')));
 
 
 // Create a MySQL connection
