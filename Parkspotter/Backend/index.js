@@ -60,6 +60,9 @@ app.use('/confirmpayment.html',express.static(path.join(__dirname, '..', 'confir
 app.use('/bookedslot.html', express.static(path.join(__dirname, '..', 'bookedslot.html')));
 app.use('/parkingarea.html', express.static(path.join(__dirname, '..', 'parkingarea.html')));
 app.use('/datavisualization.html', express.static(path.join(__dirname, '..', 'datavisualization.html')));
+app.use('/manage-pref.html', express.static(path.join(__dirname, '..', 'manage-pref.html')));
+app.use('/manage-pref.css', express.static(path.join(__dirname, '..', 'manage-pref.css')));
+
 
 
 // Create a MySQL connection
